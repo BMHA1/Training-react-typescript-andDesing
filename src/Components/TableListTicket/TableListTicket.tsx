@@ -11,7 +11,6 @@ import '../TableListTicket/TableListTicket.css'
 
 
 
-
 interface DataType {
     address: string;
     birthdate: string;
@@ -30,10 +29,6 @@ const TableListTicket = () =>  {
     const [user , setuser] = useState<any>([]);
     const columns: ColumnsType<DataType> = [
         {
-          dataIndex: '',
-          render: () =>(<img src={vectorLogo}></img>),
-        },
-        {
           dataIndex: 'present',
           render: (row:boolean) =>(row)?(<img src={ticketVerde}></img>):(<img src={ticketRojo}></img>),
         },
@@ -41,7 +36,7 @@ const TableListTicket = () =>  {
           key:'firstName',
           render:(payload:DataType) => {
             return (
-                <div>
+                <div className='table-cell'>
                     <h3>
                         {payload.firstName} {payload.lastName}
                     </h3>
@@ -56,7 +51,7 @@ const TableListTicket = () =>  {
           dataIndex: '_id',
           render:(row:string) => {
             return (
-                <div>
+                <div  className='table-cell'>
                     <h3>
                         ID
                     </h3>
@@ -71,7 +66,7 @@ const TableListTicket = () =>  {
           dataIndex: 'ticket',
           render:(row:string) => {
             return (
-                <div>
+                <div className='table-cell'>
                     <h3>
                         Nº Ticket
                     </h3>
@@ -114,10 +109,9 @@ const TableListTicket = () =>  {
     }
 
     return (
-        <div>
-            <Table columns={columns} dataSource={user} showHeader={false} bordered
-            />
-        </div>
+        <>
+            <Table columns={columns} dataSource={user} showHeader={false} size='middle'/>
+        </>
       );
 
 }

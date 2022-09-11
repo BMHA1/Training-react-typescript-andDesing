@@ -6,6 +6,12 @@
     height: 100vh;
 }
 
+.ant-layout-content {
+    width: 90%;
+    flex: auto;
+    min-height: 0;
+}
+
 .ant-menu {
     box-sizing: border-box;
     font-variant: tabular-nums;
@@ -24,3 +30,25 @@
     transition: background .3s,width .3s cubic-bezier(.2,0,0,1) 0s;
     height: 100%;
 }
+
+.content-main{
+    width:100%;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding-left: 10vw;
+}
+.content-presentation {
+    margin-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.content-table{
+    width: 90%;
+}
+
+
+

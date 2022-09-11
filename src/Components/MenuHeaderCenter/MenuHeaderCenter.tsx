@@ -9,9 +9,9 @@ const MenuHeaderCenter = (props: any) =>  {
                     theme="light"
                     mode="vertical"
                     defaultSelectedKeys={['3']}
-                    items={props.images?.map((imagen :any, index:number) => ({
+                    items={props.imagen?.map((image :any, index:number) => ({
                         key: String(index + 1),
-                        label: `nav ${imagen + 1}`,
+                        label: `nav ${image + 1}`,
                       }))}
                 />
         </>
