@@ -1,0 +1,13 @@
+.ant-table-tbody>tr>td {
+  border-left: 1px solid #8b1b1b;
+  border-spacing: 9px;
+  transition: background .3s;
+}
+
+.ant-table-tbody {
+  border-spacing: 9px;
+  transition: background .3s;
+}
+tr {
+  width: 25%;
+}
