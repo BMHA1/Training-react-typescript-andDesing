@@ -1,0 +1,26 @@
+
+.layout{
+    height: 100%;
+}
+.site-layout{
+    height: 100vh;
+}
+
+.ant-menu {
+    box-sizing: border-box;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    font-feature-settings: "tnum";
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    line-height: 0;
+    text-align: left;
+    list-style: none;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 3px 6px -4pxrgba(0,0,0,.12),0 6px 16px 0rgba(0,0,0,.08),0 9px 28px 8pxrgba(0,0,0,.05);
+    transition: background .3s,width .3s cubic-bezier(.2,0,0,1) 0s;
+    height: 100%;
+}
