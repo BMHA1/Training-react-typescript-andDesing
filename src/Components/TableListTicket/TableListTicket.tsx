@@ -5,7 +5,6 @@ import ticketVerde from '../../img/tickeVerde.svg';
 import ticketRojo from '../../img/ticket_rojo.svg';
 import buttonModal from '../../img/button_modal.svg';
 import { APIConsumer } from '../../Api/ApiUser';
-import {useDispatch} from 'react-redux';
 import '../TableListTicket/TableListTicket.css'
 import ModalInfo from '../Modal/ModalInfo';
 
@@ -28,8 +27,7 @@ const TableListTicket : React.FC = () =>  {
     const [user , setUser] = useState<any>({});
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
-    const dispatch = useDispatch()
-
+  
     const columns: ColumnsType<DataType> = [
         {
           dataIndex: 'present',
@@ -126,7 +124,7 @@ const TableListTicket : React.FC = () =>  {
         <>
             <Table columns={columns} dataSource={users} showHeader={false} size='middle'/>
             <Modal 
-                width={800}
+                width={700}
                 open={open}
                 onOk={handleOk}
                 onCancel={handleCancel}

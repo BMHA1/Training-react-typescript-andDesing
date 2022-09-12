@@ -1,9 +1,7 @@
-import { Button, Modal } from 'antd';
 import ticketVerde from '../../img/tickeVerde.svg';
 import ticketRojo from '../../img/ticket_rojo.svg';
 import React, { useEffect, useState } from 'react';
-
-
+import './ModalInfo.css'
 
 
 
