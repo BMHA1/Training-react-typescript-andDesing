@@ -39,6 +39,7 @@
     background: white;
     padding-left: 10vw;
 }
+
 .content-presentation {
     margin-bottom: 64px;
     display: flex;
@@ -51,4 +52,22 @@
 }
 
 
+.content-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.content-sider{
+    display: flex;
+}
+.content-menu>button{
+    margin-top: 48px;
+}
+
+.ant-layout-sider {
+    position: relative;
+    min-width: 0;
+    background: white;
+    transition: all 0.2s;
+}
