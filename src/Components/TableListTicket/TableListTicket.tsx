@@ -1,15 +1,15 @@
-import { Table } from 'antd';
+import { Table , Button,Modal} from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import ticketVerde from '../../img/tickeVerde.svg';
 import ticketRojo from '../../img/ticket_rojo.svg';
-import vectorLogo from '../../img/vector_logo.svg';
 import buttonModal from '../../img/button_modal.svg';
 import { APIConsumer } from '../../Api/ApiUser';
+import {useDispatch} from 'react-redux';
 import '../TableListTicket/TableListTicket.css'
-
-
+import {useSelector} from 'react-redux'
+import {DataReducer} from  '../../Service/DataReducer';
+import ModalInfo from '../Modal/ModalInfo';
 
 interface DataType {
     address: string;
@@ -24,9 +24,14 @@ interface DataType {
 
 }
 
-const TableListTicket = () =>  {
+const TableListTicket : React.FC = () =>  {
 
-    const [user , setuser] = useState<any>([]);
+    const [users , setUsers] = useState<any>([]);
+    const [user , setUser] = useState<any>({});
+    const [loading, setLoading] = useState(false);
+    const [open, setOpen] = useState(false);
+    const dispatch = useDispatch()
+
     const columns: ColumnsType<DataType> = [
         {
           dataIndex: 'present',
@@ -66,7 +71,7 @@ const TableListTicket = () =>  {
           dataIndex: 'ticket',
           render:(row:string) => {
             return (
-                <div className='table-cell'>
+                <div >
                     <h3>
                         Nº Ticket
                     </h3>
@@ -80,29 +85,40 @@ const TableListTicket = () =>  {
         {
           render: (payload) =>{
             return(
-                <button onClick={()=> handleModal(payload)}>
-                    <img src={buttonModal}></img>
-                </button>
+              <Button type="link" onClick={()=> showModal(payload)}>
+                  <img src={buttonModal}></img>
+              </Button>
             )
           }
         },
-      ];
+    ];
 
-    const handleModal = (dataUser :any) =>{
-        console.log(dataUser);
-        dataUser.open='true'
-    }
+    const showModal = (payload:any) => {
+      setUser(payload);
+      setOpen(true);
+    };
+
+    const handleOk = () => {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setOpen(false);
+      }, 3000);
+    };
+
+    const handleCancel = () => {
+      setOpen(false);
+    };
 
     useEffect(() => {
         getListUsers();
+
     }, [])
 
     const getListUsers = async () => {
-
         try {
             let res = await APIConsumer.getAllUsers();
-            setuser(res);
-            console.log(res);
+            setUsers(res);
         } catch (error) {
             console.log();
         }
@@ -110,7 +126,16 @@ const TableListTicket = () =>  {
 
     return (
         <>
-            <Table columns={columns} dataSource={user} showHeader={false} size='middle'/>
+            <Table columns={columns} dataSource={users} showHeader={false} size='middle'/>
+            <Modal 
+                width={800}
+                open={open}
+                onOk={handleOk}
+                onCancel={handleCancel}
+                footer={null}
+              >
+                <ModalInfo user={user}/>
+            </Modal>
         </>
       );
 
