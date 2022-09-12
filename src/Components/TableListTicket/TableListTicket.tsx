@@ -7,8 +7,6 @@ import buttonModal from '../../img/button_modal.svg';
 import { APIConsumer } from '../../Api/ApiUser';
 import {useDispatch} from 'react-redux';
 import '../TableListTicket/TableListTicket.css'
-import {useSelector} from 'react-redux'
-import {DataReducer} from  '../../Service/DataReducer';
 import ModalInfo from '../Modal/ModalInfo';
 
 interface DataType {
