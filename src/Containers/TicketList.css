@@ -31,13 +31,13 @@
     height: 100%;
 }
 
-.content-main{
-    width:100%;
-    padding-top: 60px;
+.content-main {
+    width: 100%;
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     background: white;
-    padding-left: 10vw;
+    padding-left: 7vw;
 }
 
 .content-presentation {

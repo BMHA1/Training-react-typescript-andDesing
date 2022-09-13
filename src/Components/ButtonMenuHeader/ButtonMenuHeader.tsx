@@ -20,18 +20,22 @@ const ButtonMenuHeader = (props: any) =>  {
             <div className='content-menu-up'>
                 {iconUp.map((img:string,key:number) => {
                     return(
-                        <Button  type="link" >
-                            <img src={img} alt={`img${key}`} key={key}></img>
-                        </Button>
+                        <div className='content-button-img-up'>
+                            <Button  type="link" >
+                                <img src={img} alt={`img${key}`} key={key} className='img-up'></img>
+                            </Button>
+                        </div>
                     )
                 })}
             </div>
             <div className='content-menu-down'>
                 {iconDown.map((img:string,key:number) => {
                     return(
-                        <Button  type="link" >
-                            <img src={img} alt={`img${key}`} key={key}></img>
-                        </Button>
+                        <div className='content-button-img'>
+                            <Button  type="link" >
+                                <img src={img} alt={`img${key}`} key={key}></img>
+                            </Button>
+                        </div>
                     )
                 })}
             </div>

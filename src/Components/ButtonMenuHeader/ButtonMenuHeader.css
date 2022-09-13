@@ -8,8 +8,21 @@
     margin-top: 0.5rem;
 }
 
+button>img{
+    width: 22px;
+}
+
 .content-menu-down{
-    margin-top: 5rem;
+    position: fixed;
+    top: calc(50% - 222px);
+    display: flex;
+    flex-direction: column;
+}
+.content-menu-up{
+    position: fixed;
+    top: 0rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .content-menu-down>button{
@@ -23,7 +36,44 @@
     transition: all 0.2s;
 }
 
-.content-menu-down>button:hover{
-    margin-right: 0.1rem;
+.content-button-img{
+    margin-top: 1.5rem;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-button-img>button:hover{
+    width: 70px;
+    height: 50px;
     border-left:4px black solid;
+}
+
+.content-button-img-up{
+    width: 70px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-button-img-up :nth-child(2n){
+    margin-top: 1.5rem;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-button-img-up>button:hover{
+    width: 70px;
+    height: 50px;
+    border-left:4px black solid;
+}
+
+.img-up{
+    width: 25px;
 }
